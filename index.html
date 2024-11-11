@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى [اسمها]</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>جنتي</h1>
+</header>
+
+<!-- قسم الترحيب -->
+<section class="intro">
+    <p>كل عام ونتي بخير يا اجمل حاجة حصلت لي، كل عام و نحن مع بعض</p>
+</section>
+
+<!-- قسم لماذا أنتِ مميزة -->
+<section class="why-you-are-special">
+    
+    <h2>
+       لماذا أحبها
+    
+    </h2>
+    <ul>
+        <li>هي ذات البسمة الأعذب</li>
+        <li>هي ذات القلب الأطيب</li>
+        <li>هي من يضفي على حياتي أجمل اللمسات</li>
+        <li>هي من كانت و مازالت رفيقة الدرب المؤنسة لي في أحلك أيام عمري</li>
+    </ul>
+</section>
+
+<!-- قسم الاقتباسات -->
+<section class="quotes">
+    <h2>اقتباسات رومانسية</h2>
+    <blockquote>“أحِبّكَ جداً لدرجة أنك لوْ كُنتِ هوائي لاستنشقتك وما زفرتك أبداً، أحببتك بتهور لدرَجة أنني ابتعدت عنْ كُلّ مَنْ كَان قَرِيباً مِنِّي، وَانعزلت بكِش وَحْدك.”</blockquote>
+    <blockquote>“في قلبي يغفو أمير فاضت به الروح عشقاً فيك.”</blockquote>
+    <blockquote>“أحبكَ لأنكِ أنت التي أرى فيها طفلتي المدللة عند الحب، و زوجتي المساندة عند ضعفي، و صاحبتي عند شِجاري بمزاح، وكل البشر عندما أشعُر بأني وحيد.”</blockquote>
+    <blockquote>“لا أخافك بل أخاف عمراً قد يأتي دونك.”</blockquote>
+    <blockquote>“عندما أغار عليك من أتفه الأشياء وأخلق منها المشاكل، فتأكدي أن هذا من شدة جنوني بك.”</blockquote>
+</section>
+
+<!-- قسم الرسالة الخاصة مع تغيير الرسائل -->
+<section class="special-message">
+    <h2>تهنئة خاصة</h2>
+    <!-- سيتم تغيير محتوى <p> هنا بواسطة JavaScript -->
+    <p>أهديكِ بعدد مرات ظهور القمر، كل عبارات التهنئة بعيد ميلادكِ يا أغلى البشر.</p>
+</section>
+
+<footer>
+    <button type="button" onclick="window.location.href='index1.html';">إختبار الحب</button>
+</footer>
+
+<script>
+// رسائل تتناوب في القسم الخاص
+const messages = [
+    "أهديكِ بعدد مرات ظهور القمر.",
+    "كل عبارات التهنئة بعيد ميلادكِ.",
+    "يا أغلى البشر."
+];
+let index = 0;
+
+// تغيير الرسالة كل 2 ثوانٍ
+function changeMessage() {
+  const messageElement = document.querySelector(".special-message p");
+  messageElement.style.opacity = 0; // إخفاء الرسالة الحالية
+  setTimeout(() => {
+    messageElement.textContent = messages[index];
+    messageElement.style.opacity = 1; // إظهار الرسالة الجديدة
+    index = (index + 1) % messages.length;
+  }, 300); // تأخير لمدة 300 مللي ثانية أثناء الانتقال
+}
+
+setInterval(changeMessage, 2000); // تغيير الرسالة كل 2 ثوانٍ
+
+// ميزة ظهور القلوب عند النقر
+document.addEventListener("click", (e) => {
+  const heart = document.createElement("span");
+  heart.classList.add("heart");
+  heart.textContent = "🎈❤️🎈";
+  heart.style.position = "absolute"; // اجعل القلب عائم
+  heart.style.left = `${e.pageX}px`;
+  heart.style.top = `${e.pageY}px`;
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 2000); // إزالة القلب بعد ثانيتين
+});
+</script>
+
+<style>
+/* تنسيقات خاصة للقلب */
+.heart {
+  font-size: 24px;
+  color: red;
+  animation: float 2s ease-in-out forwards;
+}
+
+@keyframes float {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px) scale(1.5);
+  }
+}
+</style>
+
+</body>
+</html>
+

@@ -1,0 +1,154 @@
+/* إعدادات الجسم العامة */
+body {
+    background: linear-gradient(to bottom, #2D0102, #FB1A1A); /* لون خلفية وردي فاتح */
+    font-family: 'Arial', sans-serif;
+    color: #333; /* لون النص */
+    line-height: 1.6;
+    margin: 0;
+    padding:0px;
+    text-align: center; /* جعل النص في الوسط 
+    */
+    
+    // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 900
+
+.beiruti-<uniquifier> {
+  font-family: "Beiruti", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+}
+
+header {
+  background-image: url('/44b895df169c4d129ed0281f2f17e4cc~tplv-zhb3gpgdd6-image.png'); /* ضع هنا مسار صورتك */
+  background-size: cover; /* تجعل الصورة تغطي كامل مساحة الهيدر */
+  background-position: center; /* تجعل الصورة متمركزة */
+  background-repeat: no-repeat; /* تمنع تكرار الصورة */
+  height: 25vh; /* تجعل ارتفاع الهيدر 18% من ارتفاع الشاشة */
+  margin: 0; /* تصفير الهامش الخارجي */
+  padding: 0; /* تصفير الحواف الداخلية */
+}
+
+
+  .intro{
+    color:#fff;
+  }
+
+
+/* قسم الترحيب */
+.welcome,
+.why-you-are-special,
+.quotes,
+.special-message,
+.future-message {
+    background-color: black; /* لون خلفية وردي غامق */
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* ضبط الهوامش لتكون في الوسط */
+    width: 80%; /* ضبط عرض الأقسام */
+    max-width: 600px; /* ضبط العرض الأقصى للأقسام */
+    font-size: 1.5em;
+    color: #fff;
+}
+
+/* تنسيق عناوين الأقسام */
+h1, h2 {
+    color: #fff; /* لون أبيض للعناوين */
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+/* تنسيقات الرسائل المستقبلية */
+#futureMessagesList {
+    list-style-type: none; /* إزالة النقاط من القائمة */
+    padding: 0;
+}
+
+}
+
+/* تأثير القلوب */
+.heart {
+    position: absolute;
+    font-size: 24px;
+    animation: pop 1s forwards;
+}
+
+@keyframes pop {
+    0% { transform: scale(0); opacity: 1; }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); opacity: 0; }
+}
+
+
+
+footer {
+    background-color:black; /* لون داكن للفوتر */
+    color: #ecf0f1; /* لون النص */
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid #e74c3c; /* خط علوي مميز */
+    font-family: 'Beiruti', sans-serif; /* اختيار الخط حسب الخطوط المستخدمة في الصفحة */
+    position: relative;
+    overflow: hidden;
+}
+
+/* زر الفوتر */
+footer button {
+    background-color: #e74c3c; /* لون خلفية الزر */
+    color: #ffffff; /* لون النص في الزر */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px; /* زر دائري الأطراف */
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit; /* يطابق الخط العام للفوتر */
+}
+
+footer button:hover {
+    background-color: #c0392b; /* لون عند التمرير */
+    transform: scale(1.1); /* تكبير الزر قليلاً عند التمرير */
+}
+
+/* تأثير زخرفي (دوائر مضيئة) */
+footer::before, footer::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: pulsate 5s ease infinite;
+}
+
+footer::before {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    left: -50px;
+}
+
+footer::after {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -100px;
+}
+
+/* حركة النبض للزخارف */
+@keyframes pulsate {
+    0%, 100% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}

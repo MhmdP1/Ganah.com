@@ -1,0 +1,306 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار الحب</title>
+    <style>
+        /* تصميم زر الرجوع */
+        body {
+            background: linear-gradient(to bottom, #2D0102, #FB1A1A);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #fff;
+            background-color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #666;
+        }
+
+        /* تصميم العنوان */
+        h1 {
+            text-align: center;
+            color: #FDDBDB;
+        }
+
+        /* تصميم الحاوية الرئيسية للسؤال */
+        .question-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #0000008F;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* تصميم نص السؤال */
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #FFEDED;
+        }
+
+        /* تصميم الخيارات */
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .option {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            background-color: #000000;
+            cursor: pointer;
+            text-align: center;
+            color: #FFFFFF;
+            transition: background-color 0.3s ease;
+        }
+
+      
+      /* الإجابة الصحيحة تظهر باللون الأخضر سواء تم اختيارها أم لا */
+.option.correct {
+    background-color: #07F411; /* الأخضر للإجابة الصحيحة */
+}
+
+/* تغيير اللون عند المرور على الإجابة الصحيحة */
+.option.correct:hover {
+    background-color: #07F411; /* الأخضر عند المرور بالمؤشر على الإجابة الصحيحة */
+}
+
+        /* تصميم الألوان عند اختيار الإجابة */
+        .correct {
+            background-color: #07F411; /* لون أخضر للإجابة الصحيحة */
+        }
+
+        .incorrect {
+            background-color: #F10606; /* لون أحمر للإجابة الخاطئة */
+        }
+
+        /* شريط التقدم */
+        .progress-bar {
+            width: 100%;
+            background-color: #E4C8C8;
+            height: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .progress {
+            width: 0;
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+
+        /* تصميم قسم النتيجة */
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* تصميم الزر لإعادة المحاولة */
+        .restart-button {
+            background-color: #555;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .restart-button:hover {
+            background-color: #666;
+        }
+
+        /* تصميم زر التالي */
+        .next-button {
+            display: none;
+            background-color: #555;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+            margin-top: 20px;
+            margin-left: auto;
+        }
+
+        .next-button:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- زر الرجوع -->
+    <a href="index1.html" class="back-button">رجوع</a>
+
+    <h1>اختبار الحب</h1>
+
+    <div id="question-container" class="question-container">
+        <div id="question" class="question"></div>
+        <div id="options" class="options"></div>
+    </div>
+
+    <div id="progress-bar" class="progress-bar">
+        <div id="progress" class="progress"></div>
+    </div>
+
+    <div id="result" class="result hidden">
+        <div id="score"></div>
+        <div id="accuracy"></div>
+        <div id="message"></div>
+        <button id="restart" class="restart-button">إعادة المحاولة</button>
+    </div>
+
+    <button id="next-button" class="next-button">التالي</button>
+
+    <script>
+        const questions = [
+            {
+                question: "ما الذي يفضل محمد أن تفعله جنة عندما يشعر بالحزن و القلق؟",
+                options: ["أ) أن تعطيه مساحة للتفكير بمفرده.", "ب) أن تواسيه بكلمات لطيفة وتساعده في تهدئة نفسه.", "ج) أن تقترح عليه الخروج معًا في نزهة للترفيه.", "د) أن تحاول حل المشكلة مباشرة."],
+                correct: 1
+            },
+            {
+                question: "كيف يحب محمد أن تدعمه جنة في التحديات التي يواجهها؟",
+                options: ["أ) تشجعه وتطمئنه بأنه سيتجاوز التحدي.", "ب) اظهار رغبتها في مساعدته عن طريق نصائحها وآرائها.", "ج) تتركه يعمل بمفرده لكن تتابعه بحرص.", "د) تدعمه من خلال القيام بأشياء تسعده مثل تقديم هدية أو نشاط ممتع."],
+                correct: 1
+            },
+            {
+                question: "ما هو التصرف الذي يعجب محمد أكثر عندما يتحدث مع جنة عن مشاعرهما؟",
+                options: ["أ) أن تستمع إليه بانتباه كامل وتدعه يعبر عن نفسه.", "ب) أن تبدي آرائها ومشاعرها في الموضوع وتشارك معه الأفكار.", "ج) أن تحافظ على هدوءها وبرودها.", "د) أن تعبر عن دعمها العاطفي وتظهر له اهتمامًا خاصًا."],
+                correct: 1
+            },
+            {
+                question: "كيف يحب محمد أن تناديه جنة؟",
+                options: ["أ) محمد", "ب) حبيبي", "ج) باكا", "د) حمودي"],
+                correct:2
+            },
+            {
+                question: "ما هو الجانب المفضل لمحمد من جنة؟",
+                options: ["أ) هدوءها وصرامتها وعقلها.", "ب) الشخصية الكوميدية.", "ج) جانبها الرومانسي.", "د) كل ما سبق."],
+                correct: 3
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let answeredQuestions = 0;
+
+        function loadQuestion() {
+            if (currentQuestionIndex < questions.length) {
+                const question = questions[currentQuestionIndex];
+                const questionText = document.getElementById('question');
+                const optionsContainer = document.getElementById('options');
+                
+                questionText.innerText = question.question;
+                optionsContainer.innerHTML = '';
+                question.options.forEach((option, index) => {
+                    const optionButton = document.createElement('div');
+                    optionButton.className = 'option';
+                    optionButton.innerText = option;
+                    optionButton.addEventListener('click', () => checkAnswer(index));
+                    optionsContainer.appendChild(optionButton);
+                });
+
+                document.getElementById('next-button').style.display = 'none'; // إخفاء زر التالي
+            } else {
+                showResult();
+            }
+        }
+
+       
+       function checkAnswer(selectedIndex) {
+    const question = questions[currentQuestionIndex];
+    const options = document.querySelectorAll('.option');
+
+    // إظهار الإجابة الصحيحة بالأخضر
+    if (selectedIndex === question.correct) {
+        options[selectedIndex].classList.add('correct');
+    } else {
+        // إظهار الإجابة الخاطئة باللون الأحمر
+        options[selectedIndex].classList.add('incorrect');
+        options[question.correct].classList.add('correct');
+    }
+
+    // إظهار جميع الإجابات
+    options.forEach((option, index) => {
+        option.style.display = 'block';
+    });
+
+    // إظهار زر "التالي" لتمكين المستخدم من الانتقال
+    document.getElementById('next-button').style.display = 'inline-block';
+}
+       
+       
+       
+       
+       
+        document.getElementById('next-button').addEventListener('click', () => {
+            currentQuestionIndex++;
+            answeredQuestions++;
+            updateProgressBar();
+            loadQuestion();
+        });
+
+        function updateProgressBar() {
+            const progress = document.getElementById('progress');
+            progress.style.width = `${(answeredQuestions / questions.length) * 100}%`;
+        }
+
+        function showResult() {
+            const resultContainer = document.getElementById('result');
+            const scoreElement = document.getElementById('score');
+            const accuracyElement = document.getElementById('accuracy');
+            const messageElement = document.getElementById('message');
+
+            const accuracy = (score / questions.length) * 100;
+            scoreElement.innerText = `عدد الإجابات الصحيحة: ${score}`;
+            accuracyElement.innerText = `نسبة الدقة: ${accuracy}%`;
+
+            if (accuracy === 100) {
+                messageElement.innerText = 'مبروك! لقد أجبت على جميع الأسئلة بشكل صحيح!';
+            } else {
+                messageElement.innerText = `حاول مرة أخرى!`;
+            }
+
+            resultContainer.classList.remove('hidden');
+            resultContainer.classList.remove('hidden');
+        }
+
+        document.getElementById('restart').addEventListener('click', () => {
+            score = 0;
+            answeredQuestions = 0;
+            currentQuestionIndex = 0;
+            updateProgressBar();
+            loadQuestion();
+            document.getElementById('result').classList.add('hidden');
+        });
+
+        // تحميل السؤال الأول عند تحميل الصفحة
+        loadQuestion();
+    </script>
+
+</body>
+</html>
