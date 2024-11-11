@@ -21,7 +21,7 @@ body {
 }
 
 header {
-  background-image: url('/44b895df169c4d129ed0281f2f17e4cc~tplv-zhb3gpgdd6-image.png'); /* ضع هنا مسار صورتك */
+  background-image: url('44b895df169c4d129ed0281f2f17e4cc~tplv-zhb3gpgdd6-image.png'); /* ضع هنا مسار صورتك */
   background-size: cover; /* تجعل الصورة تغطي كامل مساحة الهيدر */
   background-position: center; /* تجعل الصورة متمركزة */
   background-repeat: no-repeat; /* تمنع تكرار الصورة */
